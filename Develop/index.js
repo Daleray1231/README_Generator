@@ -46,6 +46,19 @@ const questions = [
 ];
 
 // Prompt the user for input
+inquirer
+  .prompt(questions)
+  .then((answers) => {
+    const readmeContent = generateReadme(answers);
 
+    // Write the README.md file
+    fs.writeFile('README.md', readmeContent, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('Successfully created README.md!');
+      }
+    });
+  });
 
 // Create a function to generate README content
