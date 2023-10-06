@@ -24,9 +24,11 @@ const questions = [
     message: 'How should your project be used?',
   },
   {
-    type: 'input',
+    type: 'list',
     name: 'license',
-    message: 'What is the project license?',
+    message: 'Choose a license for your project. [Hit Enter to skip]',
+    default: '',
+    choices: ['MIT', 'GPL-3.0', 'Apache-2.0', 'None'],
   },
   {
     type: 'input',
@@ -40,8 +42,15 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'questions',
-    message: 'How can users reach out to you with questions?',
+    name: 'github',
+    message: 'What is your GitHub username? [Hit Enter to skip]',
+    default: '',
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email address? [Hit Enter to skip]',
+    default: '',
   },
 ];
 
@@ -63,6 +72,26 @@ inquirer
 
 // Create a function to generate README content
 function generateReadme(data) {
+  // Create a variable to store the license badge based on the user's input
+  let licenseBadge = '';
+
+  // Check the selected license and generate the appropriate badge
+  if (data.license === 'MIT') {
+    licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+  } else if (data.license === 'GPL-3.0') {
+    licenseBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+  } else if (data.license === 'Apache-2.0') {
+    licenseBadge = '[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+  } else {
+    // Handle the case where "None" or an unrecognized license is selected
+    licenseBadge = 'This project is not licensed.';
+  }
+
+  // Create a GitHub link if the username is provided
+  const githubLink = data.github
+    ? `You can also reach out to me on [GitHub](https://github.com/${data.github}).`
+    : '';
+
   return `
 # ${data.title}
 
@@ -84,7 +113,7 @@ ${data.installation}
 ${data.usage}
 
 ## License
-This project is licensed under the ${data.license} license.
+${licenseBadge}
 
 ## Contributing
 ${data.contributing}
@@ -93,6 +122,8 @@ ${data.contributing}
 ${data.tests}
 
 ## Questions
-For any questions or feedback, please feel free to [contact me](mailto:${data.questions}).
+For any questions or feedback, please feel free to contact me at ${data.email}.
+
+${githubLink}
 `;
 }
