@@ -1,63 +1,65 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+// Import required packages
+const inquirer = require('inquirer'); // For user input
+const fs = require('fs'); // For file operations
 
 // Create an array of questions for user input
 const questions = [
   {
     type: 'input',
     name: 'title',
-    message: 'What is the title of your project?',
+    message: 'What is the title of your project?', // Ask for the project title
   },
   {
     type: 'input',
     name: 'description',
-    message: 'Provide a description of your project:',
+    message: 'Provide a description of your project:', // Ask for the project description
   },
   {
     type: 'input',
     name: 'installation',
-    message: 'How can someone install your project?',
+    message: 'How can someone install your project?', // Ask for installation instructions
   },
   {
     type: 'input',
     name: 'usage',
-    message: 'How should your project be used?',
+    message: 'How should your project be used?', // Ask how the project should be used
   },
   {
     type: 'list',
     name: 'license',
-    message: 'Choose a license for your project. [Hit Enter to skip]',
+    message: 'Choose a license for your project. [Hit Enter to skip]', // Ask for the project license
     default: '',
-    choices: ['MIT', 'GPL-3.0', 'Apache-2.0', 'None'],
+    choices: ['MIT', 'GPL-3.0', 'Apache-2.0', 'None'], // License choices
   },
   {
     type: 'input',
     name: 'contributing',
-    message: 'How can others contribute to your project?',
+    message: 'How can others contribute to your project?', // Ask how others can contribute
   },
   {
     type: 'input',
     name: 'tests',
-    message: 'How can someone run tests on your project?',
+    message: 'How can someone run tests on your project?', // Ask how to run tests
   },
   {
     type: 'input',
     name: 'github',
-    message: 'What is your GitHub username? [Hit Enter to skip]',
+    message: 'What is your GitHub username? [Hit Enter to skip]', // Ask for GitHub username
     default: '',
   },
   {
     type: 'input',
     name: 'email',
-    message: 'What is your email address? [Hit Enter to skip]',
+    message: 'What is your email address? [Hit Enter to skip]', // Ask for email address
     default: '',
   },
 ];
 
-// Prompt the user for input
+// Prompt the user for input using the defined questions
 inquirer
   .prompt(questions)
   .then((answers) => {
+    // Generate the README content using user-provided data
     const readmeContent = generateReadme(answers);
 
     // Write the README.md file
@@ -70,7 +72,7 @@ inquirer
     });
   });
 
-// Create a function to generate README content
+// Create a function to generate README content based on user input
 function generateReadme(data) {
   // Create a variable to store the license badge based on the user's input
   let licenseBadge = '';
@@ -92,6 +94,7 @@ function generateReadme(data) {
     ? `You can also reach out to me on [GitHub](https://github.com/${data.github}).`
     : '';
 
+  // Generate the complete README content
   return `
 # ${data.title}
 

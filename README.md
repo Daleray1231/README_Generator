@@ -1,5 +1,6 @@
 
 # Professional README Generator
+![Alt text](image.png)
 
 ## Description
 This is a command-line application used to create a README file for your project
@@ -32,4 +33,5 @@ For any questions or feedback, please feel free to contact me at daleray1231@gma
 
 You can also reach out to me on [GitHub](https://github.com/daleray1231).
 
-![Alt text](image.png)
+## Demo
+https://share.vidyard.com/watch/DVyR9KAMBtuCinkYphdHgh?
