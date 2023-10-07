@@ -14,7 +14,7 @@ This is a command-line application used to create a README file for your project
 - [Questions](#questions)
 
 ## Installation
-Clone the repo down from the GitHub Repo link found in the Questions section
+Clone the repo down from the GitHub Repo link found in the Demo section
 
 ## Usage
 Use this application to create a professional README for your project
@@ -34,4 +34,6 @@ For any questions or feedback, please feel free to contact me at daleray1231@gma
 You can also reach out to me on [GitHub](https://github.com/daleray1231).
 
 ## Demo
+https://github.com/Daleray1231/readMeGenerator 
+
 https://share.vidyard.com/watch/DVyR9KAMBtuCinkYphdHgh?
