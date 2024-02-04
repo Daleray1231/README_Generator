@@ -1,8 +1,8 @@
 
-# New Project
+# Demo
 
 ## Description
-Project description.
+Demo the app
 
 ## Table of Contents
 - [Installation](#installation)
@@ -13,21 +13,21 @@ Project description.
 - [Questions](#questions)
 
 ## Installation
-Clone and fork the repo from GitHub.
+clone repo, install node, run in terminal
 
 ## Usage
-Use this application to create a README.md for your project.
+to create a readme for your project
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributing
-Follow installation instructions. Open a pull request for desired updates.
+fork repo and open pull requests
 
 ## Tests
-Follow installation instructions. Run application.
+run test scripts
 
 ## Questions
-For any questions or feedback, please feel free to contact me at daleray1231@gmail.com.
+For any questions or feedback, please feel free to contact me at .
 
-You can also reach out to me on [GitHub](https://github.com/daleray1231).
+
